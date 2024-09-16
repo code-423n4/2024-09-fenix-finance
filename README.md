@@ -74,8 +74,6 @@ This audit repo and its Discord channel are accessible to **certified wardens on
 
 Please review the following confidentiality requirements carefully, and if anything is unclear, ask questions in the private audit channel in the C4 Discord.
 
->>DRAG IN CLASSIFIED IMAGE HERE
-
 ## Automated Findings / Publicly Known Issues
 
 The 4naly3er report can be found [here](https://github.com/code-423n4/2024-09-fenix-finance/blob/main/4naly3er-report.md).
