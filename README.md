@@ -54,16 +54,11 @@ Some of the checklists in this doc are for **C4 (🐺)** and some of them are fo
 ---
 
 # Fenix Finance audit details
-- Total Prize Pool: $18900 in USDC
-  - HM awards: $15500 in USDC
-  - (remove this line if there is no Analysis pool) Analysis awards: XXX XXX USDC (Notion: Analysis pool)
+- Total Prize Pool: $16,000 in USDC
+  - HM awards: $12,600 in USDC
   - QA awards: $500 in USDC
-  - (remove this line if there is no Bot race) Bot Race awards: XXX XXX USDC (Notion: Bot Race pool)
- 
-  - Judge awards: $2400 in USDC
-  - Validator awards: XXX XXX USDC (Notion: Triage fee - final)
+  - Judge awards: $2,400 in USDC
   - Scout awards: $500 in USDC
-  - (this line can be removed if there is no mitigation) Mitigation Review: XXX XXX USDC (*Opportunity goes to top 3 backstage wardens based on placement in this audit who RSVP.*)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
 - Starts September 18, 2024 20:00 UTC
 - Ends September 25, 2024 20:00 UTC
@@ -88,8 +83,256 @@ The 4naly3er report can be found [here](https://github.com/code-423n4/2024-09-fe
 
 
 _Note for C4 wardens: Anything included in this `Automated Findings / Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
-## 🐺 C4: Begin Gist paste here (and delete this line)
 
+- Centralized risk
+- Initialize front-running
+- User mistake
+- Lack of storage reservation slots, for future contracts inheritors
+- Failure to call an epoch change method for a significant amount of time, which will lead to skipping epochs
+- Locking veNFT vote strength updates during the distribution window 
+- Freezing the user's voting power at the time of voting at the beginning of the epoch, which gives them more voting power than they will have actually at the end of the epoch
+- The ability to provide arbitrary addresses in the claimBribes, claimRewards, aggregateClaim methods, which will lead to calling certain methods on behalf of VoterUpgradeable
+- Stuck emission allocated by the epoch, in case there were no votes during epoch
+- Carelessly changing important contract addresses, which can lead to various problems and out-of-sync data between contracts
+- The problem of upgrading already deployed contracts to V2 (this will not happen through an upgrade, just new deploy)
+- Not supporting the deployment of contracts for other networks other than Blast as they are, the need to remove Blast features
+
+✅ SCOUTS: Please format the response above 👆 so its not a wall of text and its readable.
+
+# Overview
+
+[ ⭐️ SPONSORS: add info here ]
+
+## Links
+
+- **Previous audits:**  https://app.hats.finance/audit-competitions/fenix-finance-0x83dbe5aa378f3ce160ed084daf85f621289fb92f/scope
+
+https://docs.fenixfinance.io/fenix/additional-information/security-and-audits
+  - ✅ SCOUTS: If there are multiple report links, please format them in a list.
+- **Documentation:** https://docs.fenixfinance.io
+- **Website:** 🐺 CA: add a link to the sponsor's website
+- **X/Twitter:** 🐺 https://twitter.com/fenixfinance
+- **Discord:** 🐺 CA: add a link to the sponsor's Discord
+
+---
+
+# Scope
+
+[ ✅ SCOUTS: add scoping and technical details here ]
+
+### Files in scope
+- ✅ This should be completed using the `metrics.md` file
+- ✅ Last row of the table should be Total: SLOC
+- ✅ SCOUTS: Have the sponsor review and and confirm in text the details in the section titled "Scoping Q amp; A"
+
+*For sponsors that don't use the scoping tool: list all files in scope in the table below (along with hyperlinks) -- and feel free to add notes to emphasize areas of focus.*
+
+| Contract | SLOC | Purpose | Libraries used |  
+| ----------- | ----------- | ----------- | ----------- |
+| [contracts/folder/sample.sol](https://github.com/code-423n4/repo-name/blob/contracts/folder/sample.sol) | 123 | This contract does XYZ | [`@openzeppelin/*`](https://openzeppelin.com/contracts/) |
+
+### Files out of scope
+✅ SCOUTS: List files/directories out of scope
+
+## Scoping Q &amp; A
+
+### General questions
+### Are there any ERC20's in scope?: Yes
+
+✅ SCOUTS: If the answer above 👆 is "Yes", please add the tokens below 👇 to the table. Otherwise, update the column with "None".
+
+Any (all possible ERC20s)
+FNX, WETH, USDB, BLAST
+
+### Are there any ERC777's in scope?: No
+
+✅ SCOUTS: If the answer above 👆 is "Yes", please add the tokens below 👇 to the table. Otherwise, update the column with "None".
+
+
+
+### Are there any ERC721's in scope?: No
+
+✅ SCOUTS: If the answer above 👆 is "Yes", please add the tokens below 👇 to the table. Otherwise, update the column with "None".
+
+
+
+### Are there any ERC1155's in scope?: No
+
+✅ SCOUTS: If the answer above 👆 is "Yes", please add the tokens below 👇 to the table. Otherwise, update the column with "None".
+
+
+
+✅ SCOUTS: Once done populating the table below, please remove all the Q/A data above.
+
+| Question                                | Answer                       |
+| --------------------------------------- | ---------------------------- |
+| ERC20 used by the protocol              |       🖊️             |
+| Test coverage                           | ✅ SCOUTS: Please populate this after running the test coverage command                          |
+| ERC721 used  by the protocol            |            🖊️              |
+| ERC777 used by the protocol             |           🖊️                |
+| ERC1155 used by the protocol            |              🖊️            |
+| Chains the protocol will be deployed on | OtherBlast  |
+
+### ERC20 token behaviors in scope
+
+| Question                                                                                                                                                   | Answer |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| [Missing return values](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#missing-return-values)                                                      |   Out of scope  |
+| [Fee on transfer](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#fee-on-transfer)                                                                  |  Out of scope  |
+| [Balance changes outside of transfers](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#balance-modifications-outside-of-transfers-rebasingairdrops) | Out of scope    |
+| [Upgradeability](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#upgradable-tokens)                                                                 |   Out of scope  |
+| [Flash minting](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#flash-mintable-tokens)                                                              | Out of scope    |
+| [Pausability](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#pausable-tokens)                                                                      | Out of scope    |
+| [Approval race protections](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#approval-race-protections)                                              | Out of scope    |
+| [Revert on approval to zero address](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-approval-to-zero-address)                            | In scope    |
+| [Revert on zero value approvals](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-zero-value-approvals)                                    | In scope    |
+| [Revert on zero value transfers](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-zero-value-transfers)                                    | Out of scope    |
+| [Revert on transfer to the zero address](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-transfer-to-the-zero-address)                    | In scope    |
+| [Revert on large approvals and/or transfers](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-large-approvals--transfers)                  | Out of scope    |
+| [Doesn't revert on failure](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#no-revert-on-failure)                                                   |  Out of scope   |
+| [Multiple token addresses](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-zero-value-transfers)                                          | Out of scope    |
+| [Low decimals ( < 6)](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#low-decimals)                                                                 |   In scope  |
+| [High decimals ( > 18)](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#high-decimals)                                                              | In scope    |
+| [Blocklists](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#tokens-with-blocklists)                                                                | Out of scope    |
+
+### External integrations (e.g., Uniswap) behavior in scope:
+
+
+| Question                                                  | Answer |
+| --------------------------------------------------------- | ------ |
+| Enabling/disabling fees (e.g. Blur disables/enables fees) | No   |
+| Pausability (e.g. Uniswap pool gets paused)               |  No   |
+| Upgradeability (e.g. Uniswap gets upgraded)               |   No  |
+
+
+### EIP compliance checklist
+`contracts/core/VotingEscrowUpgradeableV2.sol.sol`. Should comply with `EIP-721`
+
+✅ SCOUTS: Please format the response above 👆 using the template below👇
+
+| Question                                | Answer                       |
+| --------------------------------------- | ---------------------------- |
+| src/Token.sol                           | ERC20, ERC721                |
+| src/NFT.sol                             | ERC721                       |
+
+
+# Additional context
+
+## Main invariants
+
+- The user gained more voting power than expected by his actions
+- Attaching veNFT to mVeNFT resulted in the complete loss of the user's veNFT
+- The user has blocked the distribution in gauge by his actions
+- An action that should have been available only from the owner's side was called from a third-party user
+
+
+✅ SCOUTS: Please format the response above 👆 so its not a wall of text and its readable.
+
+## Attack ideas (where to focus for bugs)
+- Security of user funds 
+- Calculation of voting power in combination with permanent lock
+- Distribution of emissions between gauge/pools
+- VeNFT states and allowed actions during these states
+- Detachment and attachment to the mVeNFT
+- Permanent lock/unlock
+
+✅ SCOUTS: Please format the response above 👆 so its not a wall of text and its readable.
+
+## All trusted roles in the protocol
+
+- Owner (VotingEscrowUpgradeableV2.sol)
+- Owner (ProxyAdmin)
+- GOVERNANCE_ROLE (VoterUpgradeableV2.sol)
+- VOTER_ADMIN_ROLE (VoterUpgradeableV2.sol)
+
+✅ SCOUTS: Please format the response above 👆 using the template below👇
+
+| Role                                | Description                       |
+| --------------------------------------- | ---------------------------- |
+| Owner                          | Has superpowers                |
+| Administrator                             | Can change fees                       |
+
+## Describe any novel or unique curve logic or mathematical models implemented in the contracts:
+
+N/A
+
+✅ SCOUTS: Please format the response above 👆 so its not a wall of text and its readable.
+
+## Running tests
+
+## Setup
+### Getting the code
+Clone this repository
+```sh
+git clone --branch code4arena-04-09-2024 --recursive -j8  https://github.com/Satsyxbt/Fenix
+```
+or
+```sh
+git clone https://github.com/Satsyxbt/Fenix
+cd fenix
+git submodule update --init --recursive
+git checkout code4arena-04-09-2024
+```
+
+Enter into the directory
+```sh
+cd fenix
+```
+
+Install dependency
+```sh
+npm install
+```
+
+### Running basic tests
+To run the existing tests, also need to compile the artifacts of the fenix-dex-v3 library
+```
+sh
+1.
+    cd lib/fenix-dex-v3
+    npm install
+
+2. 
+    cd src/core
+    npm install
+    npx hardhat compile
+3.
+    cd src/periphery
+    npm install
+    npx hardhat compile
+```
+run tests command
+```sh
+npm run test
+```
+or
+```sh
+npx hardhat test
+```
+
+
+✅ SCOUTS: Please format the response above 👆 using the template below👇
+
+```bash
+git clone https://github.com/code-423n4/2023-08-arbitrum
+git submodule update --init --recursive
+cd governance
+foundryup
+make install
+make build
+make sc-election-test
+```
+To run code coverage
+```bash
+make coverage
+```
+To run gas benchmarks
+```bash
+make gas
+```
+
+✅ SCOUTS: Add a screenshot of your terminal showing the gas report
+✅ SCOUTS: Add a screenshot of your terminal showing the test coverage
 
 
 
@@ -253,3 +496,7 @@ _Note for C4 wardens: Anything included in this `Automated Findings / Publicly K
 | ./contracts/utils/VeNFTAPIUpgradeable.sol |
 | Totals: 137 |
 
+## Miscellaneous
+Employees of Fenix Finance and employees' family members are ineligible to participate in this audit.
+
+Code4rena's rules cannot be overridden by the contents of this README. In case of doubt, please check with C4 staff.
