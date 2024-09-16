@@ -1,0 +1,66 @@
+{
+  "name": "fenix",
+  "version": "0.1.0",
+  "description": "",
+  "main": "hardhat.config.ts",
+  "private": "true",
+  "scripts": {
+    "compile": "hardhat clean && npx hardhat compile",
+    "test": "npx hardhat test --parallel",
+    "test:coverage": "npx hardhat coverage",
+    "clean": "hardhat clean",
+    "lint": "npm run lint:ts && npm run lint:prettier && npm run lint:solhint",
+    "lint:fix": "npm run lint:prettier:fix",
+    "lint:prettier": "prettier --loglevel warn --ignore-path .gitignore . --check",
+    "lint:prettier:fix": "prettier --log-level warn --ignore-path .gitignore . --write",
+    "lint:solhint": "solhint contracts/**/*.sol",
+    "lint:ts": "eslint *.ts test/*.ts",
+    "lint:ts:fix": "eslint *.ts test/*.ts --fix",
+    "slither": "npm run clean && slither ."
+  },
+  "files": [
+    "/contracts/**/*.sol",
+    "!/contracts/mocks/**/*"
+  ],
+  "keywords": [
+    "Solidity",
+    "SmartContracts",
+    "DEX",
+    "Centralized liquidity"
+  ],
+  "author": "Fenix",
+  "license": "MIT",
+  "devDependencies": {
+    "@openzeppelin/contracts": "4.9.5",
+    "@openzeppelin/contracts-upgradeable": "^4.9.5"
+  },
+  "dependencies": {
+    "@cryptoalgebra/integral-core": "file:./lib/fenix-dex-v3/src/core",
+    "@cryptoalgebra/integral-periphery": "file:./lib/fenix-dex-v3/src/periphery",
+    "@cryptoalgebra/integral-plugin": "file:./lib/fenix-dex-v3/src/plugin",
+    "@ethersproject/bignumber": "^5.7.0",
+    "@nomicfoundation/hardhat-foundry": "^1.1.1",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/hardhat-upgrades": "^3.0.1",
+    "@openzeppelin/merkle-tree": "^1.0.6",
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
+    "@typescript-eslint/parser": "^6.16.0",
+    "@uniswap/v3-core": "^1.0.1",
+    "@uniswap/v3-periphery": "^1.4.4",
+    "decimal.js": "^10.4.3",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-unused-imports": "^3.0.0",
+    "ethereum-waffle": "^4.0.10",
+    "hardhat": "^2.22.10",
+    "hardhat-contract-sizer": "^2.10.0",
+    "hardhat-ignore-warnings": "^0.2.11",
+    "hardhat-tracer": "^3.0.3",
+    "prettier": "^2.8.1",
+    "prettier-check": "^2.0.0",
+    "prettier-plugin-solidity": "^1.3.1",
+    "solhint": "^4.0.0",
+    "solidity-coverage": "^0.8.13"
+  }
+}

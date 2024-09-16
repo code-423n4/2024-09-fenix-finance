@@ -1,0 +1,484 @@
+npx hardhat run .\deploy\blastSepolia\001-BlastGovernor-deploy.ts --network blastSepolia
+Starting deployment of BlastGovernorUpgradeable...
+        Constructor arguments: ["0x9140D359f2855E6540609dd4A93773ED1f45f509"]
+BlastGovernorUpgradeable deployed at 0x5BeF6fA1c3Aca46e4624f7c76B4eA395Cbcb9177
+Save to deploys.json deployed address of BlastGovernorUpgradeable_Implementation:0x5BeF6fA1c3Aca46e4624f7c76B4eA395Cbcb9177
+Warning: Address for BlastGovernorUpgradeable_Implementation is already in the list. It will be replaced.
+        Existing address: 0xbb71F88B3B5EC69E465a07B5D53e41D14f883EAe
+        New address: 0x5BeF6fA1c3Aca46e4624f7c76B4eA395Cbcb9177
+Verifying TransparentUpgradeableProxy at 0x5BeF6fA1c3Aca46e4624f7c76B4eA395Cbcb9177...
+The contract 0x5BeF6fA1c3Aca46e4624f7c76B4eA395Cbcb9177 has already been verified on Etherscan.
+https://sepolia.blastscan.io/address/0x5BeF6fA1c3Aca46e4624f7c76B4eA395Cbcb9177#code
+Starting deployment of TransparentUpgradeableProxy...
+        Logic address: 0x5BeF6fA1c3Aca46e4624f7c76B4eA395Cbcb9177
+        Admin address: 0x9502993595815b1Fa674C5133F42C3919a696bEc
+        Data: 0x
+TransparentUpgradeableProxy deployed at 0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228
+Save to deploys.json deployed address of BlastGovernorUpgradeable_Proxy:0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228
+Warning: Address for BlastGovernorUpgradeable_Proxy is already in the list. It will be replaced.
+        Existing address: 0xDecA6B7277356F37f0aF44609F8D82DEabD444dB
+        New address: 0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228
+Verifying TransparentUpgradeableProxy at 0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228...
+The contract 0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228 has already been verified on Etherscan.
+https://sepolia.blastscan.io/address/0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228#code
+
+
+npx hardhat run .\deploy\blastSepolia\002-BlastRebasingTokensGovernor-deploy.ts --network blastSepolia
+Starting deployment of BlastRebasingTokensGovernorUpgradeable...
+        Constructor arguments: ["0x9140D359f2855E6540609dd4A93773ED1f45f509"]
+BlastRebasingTokensGovernorUpgradeable deployed at 0x7057449c5D7E2E872d29913CD7d9eeECDCb9695f
+Save to deploys.json deployed address of BlastRebasingTokensGovernorUpgradeable_Implementation:0x7057449c5D7E2E872d29913CD7d9eeECDCb9695f
+Verifying TransparentUpgradeableProxy at 0x7057449c5D7E2E872d29913CD7d9eeECDCb9695f...
+Timeout for 10s before verify proccess...
+Successfully submitted source code for contract
+contracts/integration/BlastRebasingTokensGovernor.sol:BlastRebasingTokensGovernorUpgradeable at 0x7057449c5D7E2E872d29913CD7d9eeECDCb9695f
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract BlastRebasingTokensGovernorUpgradeable on the block explorer.
+https://sepolia.blastscan.io/address/0x7057449c5D7E2E872d29913CD7d9eeECDCb9695f#code
+
+Starting deployment of TransparentUpgradeableProxy...
+        Logic address: 0x7057449c5D7E2E872d29913CD7d9eeECDCb9695f
+        Admin address: 0x9502993595815b1Fa674C5133F42C3919a696bEc
+        Data: 0x
+TransparentUpgradeableProxy deployed at 0x76da5656DEa3D8A8111aB749042f98103198332F
+Save to deploys.json deployed address of BlastRebasingTokensGovernorUpgradeable_Proxy:0x76da5656DEa3D8A8111aB749042f98103198332F
+Verifying TransparentUpgradeableProxy at 0x76da5656DEa3D8A8111aB749042f98103198332F...
+Timeout for 10s before verify proccess...
+The contract 0x76da5656DEa3D8A8111aB749042f98103198332F has already been verified on Etherscan.
+https://sepolia.blastscan.io/address/0x76da5656DEa3D8A8111aB749042f98103198332F#code
+
+npx hardhat run .\deploy\blastSepolia\003-UpgradeAllContractsToSupportCentralizedGovernors-upgrade.ts --network blastSepolia > deploy.txt
+Warning: Address for BribeFactoryUpgradeable_Implementation is already in the list. It will be replaced.
+        Existing address: 0x2f48645cef79dD3cd54cf1eC7Ee318DC17Bf9cEC
+        New address: 0xaF7A155FbCa2744CE9774E5D3AE3636Fce6e9613
+Warning: Address for FenixRaiseUpgradeable_Implementation is already in the list. It will be replaced.
+        Existing address: 0x8e6b23ce25454cfc88a27babac4e7f82db8dd676
+        New address: 0xB0F73131E14a3fE2c7dB85f36E5c4C8906D6e3bF
+Warning: Address for MinterUpgradeable_Implementation is already in the list. It will be replaced.
+        Existing address: 0x30448e49743c55af3C83d2A7011df36E0438F0Ae
+        New address: 0x35C0Acd310BeDdA85F9dee90CD640f97Bb1886FC
+Warning: Address for VeBoostUpgradeable_Implementation is already in the list. It will be replaced.
+        Existing address: 0x1EdaC08F0B5a60110Bebab6977afB9ACBe65C0C9
+        New address: 0x92f6F70eAB10a8c273EA7Bd2AcE3Fe9FE575AaCd
+Warning: Address for VeFnxDistributorUpgradeable_Implementation is already in the list. It will be replaced.
+        Existing address: 0x6CB746214D07a894Dfd4306FD509265B5b64baD7
+        New address: 0x77Da2FB30566F688276C87AAFC315fCC08C1E454
+Warning: Address for VeFnxSplitMerklAidropUpgradeable_Implementation is already in the list. It will be replaced.
+        Existing address: 0x4E8cd2a8f3097decB85Faa0Ca97263f90758b7C5
+        New address: 0x506b1F4398671BA5383f2909Efb947AdC43D6950
+Warning: Address for VoterUpgradeableV1_2_Implementation is already in the list. It will be replaced.
+        Existing address: 0x9740704ea45740D2c50b2FBC3D7FfeBBDF1dd117
+        New address: 0x4121Bb0d785BaA10c230cF5Dd0c4bB858C1B56EC
+Warning: Address for VotingEscrowUpgradeableV1_2_Implementation is already in the list. It will be replaced.
+        Existing address: 0x9B7d50fc5e8e5866182ec4DbdcCc1933F889F68F
+        New address: 0x9631b1Ee096B8De95b7f449EE758CfB347002fd2
+Warning: Address for PairFactoryUpgradeable_Implementation is already in the list. It will be replaced.
+        Existing address: 0xb99EBAcaED6C0B5292E31653f5470F033bB28e1d
+        New address: 0x3CCC9914E88c7E79b3b32a1a782BFB37148a68d4
+Warning: Address for FeesVaultFactoryUpgradeable_Implementation is already in the list. It will be replaced.
+        Existing address: 0xB40FB324F9448bb4eff37063BbE051d27e39CAd5
+        New address: 0xCB1270476D62E2cF1062f53Cd3F919bC23616618
+Warning: Address for PerpetualsGaugeUpgradeable_Implementation is already in the list. It will be replaced.
+        Existing address: 0x1eBac806eEEc7Dd2940FdaD74BFFA078Ca3CaE15
+        New address: 0x88d8aE0B24fcB16845788810a298131CfD12f45f
+Warning: Address for PerpetualsTradersRewarderUpgradeable_Implementation is already in the list. It will be replaced.
+        Existing address: 0x4b5F9CD6BAaa585D5dbd4A4F0069FaC4Fc048776
+        New address: 0xaa4e8563C477907a410B871b2e27056Dc3d4aD32
+Warning: Address for AlgebraFNXPriceProviderUpgradeable_Implementation is already in the list. It will be replaced.
+        Existing address: 0x1AE69A793A4e20997dd76a51D909859ca869482C
+        New address: 0x9Ac737DB1768272C8711B168560a41e989A6f77A
+
+Starting deployment of PairFactoryUpgradeable...
+	Constructor arguments: ["0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228"]
+PairFactoryUpgradeable deployed at 0x9aBB395fB296Ec3322e39aA3699fbd7cfc88285d
+Save to deploys.json deployed address of PairFactoryUpgradeable_Implementation:0x9aBB395fB296Ec3322e39aA3699fbd7cfc88285d
+Verifying TransparentUpgradeableProxy at 0x9aBB395fB296Ec3322e39aA3699fbd7cfc88285d...
+Timeout for 10s before verify proccess...
+
+
+Warning: Address for GaugeFactoryUpgradeable_Implementation is already in the list. It will be replaced.
+        Existing address: 0xF69C1f4D10B1016F3519C8514b86080d84e7f5A0
+        New address: 0x9aBB395fB296Ec3322e39aA3699fbd7cfc88285d
+
+Starting deployment of PairFactoryUpgradeable...
+	Constructor arguments: ["0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228"]
+PairFactoryUpgradeable deployed at 0xbdaf5fc15D03FE670C974a2083a3892d21762449
+Save to deploys.json deployed address of PairFactoryUpgradeable_Implementation:0xbdaf5fc15D03FE670C974a2083a3892d21762449
+Verifying TransparentUpgradeableProxy at 0xbdaf5fc15D03FE670C974a2083a3892d21762449...
+Timeout for 10s before verify proccess...
+
+Warning: Address for PairFactoryUpgradeable_Implementation is already in the list. It will be replaced.
+        Existing address: 0x3CCC9914E88c7E79b3b32a1a782BFB37148a68d4
+        New address: 0xbdaf5fc15D03FE670C974a2083a3892d21762449
+
+
+
+Starting deployment of Pair...
+	Constructor arguments: ["0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228"]
+Pair deployed at 0x71F9683e343309d7D7A235199f891a254CeC9eF7
+Save to deploys.json deployed address of Pair_Implementation:0x71F9683e343309d7D7A235199f891a254CeC9eF7
+Verifying TransparentUpgradeableProxy at 0x71F9683e343309d7D7A235199f891a254CeC9eF7...
+Timeout for 10s before verify proccess...
+Successfully submitted source code for contract
+contracts/dexV2/Pair.sol:Pair at 0x71F9683e343309d7D7A235199f891a254CeC9eF7
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract Pair on the block explorer.
+https://sepolia.blastscan.io/address/0x71F9683e343309d7D7A235199f891a254CeC9eF7#code
+
+Starting deployment of BribeUpgradeable...
+	Constructor arguments: ["0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228"]
+BribeUpgradeable deployed at 0x4FAf534988aD812C4d2054219861ac47a45bA3dD
+Save to deploys.json deployed address of BribeUpgradeable_Implementation:0x4FAf534988aD812C4d2054219861ac47a45bA3dD
+Verifying TransparentUpgradeableProxy at 0x4FAf534988aD812C4d2054219861ac47a45bA3dD...
+Timeout for 10s before verify proccess...
+Successfully submitted source code for contract
+contracts/bribes/BribeUpgradeable.sol:BribeUpgradeable at 0x4FAf534988aD812C4d2054219861ac47a45bA3dD
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract BribeUpgradeable on the block explorer.
+https://sepolia.blastscan.io/address/0x4FAf534988aD812C4d2054219861ac47a45bA3dD#code
+
+Starting deployment of FeesVaultUpgradeable...
+	Constructor arguments: ["0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228"]
+FeesVaultUpgradeable deployed at 0x95586219CC6C58BAb392d3230CF508cE0a14EB95
+Save to deploys.json deployed address of FeesVaultUpgradeable_Implementation:0x95586219CC6C58BAb392d3230CF508cE0a14EB95
+Verifying TransparentUpgradeableProxy at 0x95586219CC6C58BAb392d3230CF508cE0a14EB95...
+Timeout for 10s before verify proccess...
+Successfully submitted source code for contract
+contracts/fees/FeesVaultUpgradeable.sol:FeesVaultUpgradeable at 0x95586219CC6C58BAb392d3230CF508cE0a14EB95
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract FeesVaultUpgradeable on the block explorer.
+https://sepolia.blastscan.io/address/0x95586219CC6C58BAb392d3230CF508cE0a14EB95#code
+
+Starting deployment of GaugeUpgradeable...
+	Constructor arguments: ["0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228"]
+GaugeUpgradeable deployed at 0x97C5375776c0a24447D96251AeF9077b03a85D14
+Save to deploys.json deployed address of GaugeUpgradeable_Implementation:0x97C5375776c0a24447D96251AeF9077b03a85D14
+Verifying TransparentUpgradeableProxy at 0x97C5375776c0a24447D96251AeF9077b03a85D14...
+Timeout for 10s before verify proccess...
+Successfully submitted source code for contract
+contracts/gauges/GaugeUpgradeable.sol:GaugeUpgradeable at 0x97C5375776c0a24447D96251AeF9077b03a85D14
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract GaugeUpgradeable on the block explorer.
+https://sepolia.blastscan.io/address/0x97C5375776c0a24447D96251AeF9077b03a85D14#code
+
+
+
+Warning: Address for Pair_Implementation is already in the list. It will be replaced.
+        Existing address: 0x9AF9988701d106CB576D36B4c36C72519214a7Ac
+        New address: 0x71F9683e343309d7D7A235199f891a254CeC9eF7
+Warning: Address for BribeUpgradeable_Implementation is already in the list. It will be replaced.
+        Existing address: 0x941d6dcF1Fe7cf08a2cBc8E65b62047a1645E939
+        New address: 0x4FAf534988aD812C4d2054219861ac47a45bA3dD
+Warning: Address for FeesVaultUpgradeable_Implementation is already in the list. It will be replaced.
+        Existing address: 0xC27CaC5A9e874b7E8dBE32Bc7b9bFc8451420707
+        New address: 0x95586219CC6C58BAb392d3230CF508cE0a14EB95
+Warning: Address for GaugeUpgradeable_Implementation is already in the list. It will be replaced.
+        Existing address: 0x1c3795CbF09ff0eE0b5bA5Aa160ed3c23028e2Bc
+        New address: 0x97C5375776c0a24447D96251AeF9077b03a85D14
+
+
+
+Called Contract(0x4044d19418d30FFE4eE6900C2AD83F57225fE387).changeImplementation(_implementation: "0x4FAf534988aD812C4d2054219861ac47a45bA3dD")
+Transaction hash: 0x2793b190e24d7688544ad2291fc61289d1bcfa7485798d887f990e4d7b38a81c
+Called Contract(0x4044d19418d30FFE4eE6900C2AD83F57225fE387).setDefaultBlastGovernor(defaultBlastGovernor_: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228")
+Transaction hash: 0xc0b09225485a0d5aa599af1c0de736a322f929da7978fbbba05142e8ae7713c4
+Called Contract(0x1abD24d6ea95BC2ea78e5BE16608B8068F0324D8).changeImplementation(_implementation: "0x9aBB395fB296Ec3322e39aA3699fbd7cfc88285d")
+Transaction hash: 0x5f052574632f0a34e1abad0cd6a578b230fd82af5c9b5c633161874908693ff3
+Called Contract(0x1abD24d6ea95BC2ea78e5BE16608B8068F0324D8).setDefaultBlastGovernor(defaultBlastGovernor_: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228")
+Transaction hash: 0x656b9ed00875827ee6f21b79bdda603997d52dddbf4196fbda095d7531dbb9b5
+Called Contract(0x0cC86Eb2dFB324cd7bFcAdA7F7819Ad72a059F0A).changeImplementation(_implementation: "0x9aBB395fB296Ec3322e39aA3699fbd7cfc88285d")
+Transaction hash: 0x9b67157f59a6ecd8df3ad3b4ec324bc0686d8e22b6bc0e09222dad5a9898d6b5
+Called Contract(0x0cC86Eb2dFB324cd7bFcAdA7F7819Ad72a059F0A).setDefaultBlastGovernor(defaultBlastGovernor_: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228")
+Transaction hash: 0x0f6f59af042b4fb49184ebec3a3ee40d4863414d28b07a776b6b7c1582a249ef
+Called Contract(0xD6Fe1FCb8f8F231Ce6dBF332e697E798bEC6fa79).changeImplementation(_implementation: "0x9aBB395fB296Ec3322e39aA3699fbd7cfc88285d")
+Transaction hash: 0x0e2c534e0e28dc2bd9a2b280db351e2061a55521e82ffec087c396665201a628
+Called Contract(0xD6Fe1FCb8f8F231Ce6dBF332e697E798bEC6fa79).setDefaultBlastGovernor(defaultBlastGovernor_: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228")
+Transaction hash: 0x8b397c264e41c5e4ca57e7ba26655fe9a5c23343ecac42199d1405316c63736c
+Called Contract(0xa3103248290399cc2655b68f0038ce590ce8639E).changeImplementation(implementation_: "0x95586219CC6C58BAb392d3230CF508cE0a14EB95")
+Transaction hash: 0xc5fbaed6d98d427aa6ec0dc46e9db5484723ea0ff0d07111f2d9f9243e2196be
+Called Contract(0xa3103248290399cc2655b68f0038ce590ce8639E).setDefaultBlastGovernor(defaultBlastGovernor_: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228")
+Transaction hash: 0x88e8056ca252fbaa2d32821969f244a4b5510942c8dac9671bd810b099576d05
+Called Contract(0xa3103248290399cc2655b68f0038ce590ce8639E).setRebasingTokensGovernor(rebasingTokensGovernor_: "0x76da5656DEa3D8A8111aB749042f98103198332F")
+Transaction hash: 0x0518683d6fde39770ffd3f4395d59d93da5ffd340c64cfb272171e5a7e0815f9
+
+
+MinterUpgradeable_Proxy(0xDA283872Fc205f56cE5b0268D719373dc33e35dA) blast governor equal deployer(0x9140D359f2855E6540609dd4A93773ED1f45f509)
+Transfer governor to blast centralized governor...
+Called Contract(0x4300000000000000000000000000000000000002).configureGovernorOnBehalf(_newGovernor: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228", contractAddress: "0xDA283872Fc205f56cE5b0268D719373dc33e35dA")
+Transaction hash: 0x2ae6a02399253d20e569956fc286a9a7381d162e2972969c1b78d0cdd7ad3451
+Add contract to gas holders registry...
+Called Contract(0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228).addGasHolder(contractAddress_: "0xDA283872Fc205f56cE5b0268D719373dc33e35dA")
+Transaction hash: 0xabb14ca3eadd908b82a4b91f48eb9415c7c14262c325d832eaefa16980c03aa0
+VotingEscrowUpgradeableV1_2_Proxy(0x4dD9e7dd344a309030B22d36A567f0d99C6a5403) blast governor equal deployer(0x9140D359f2855E6540609dd4A93773ED1f45f509)
+Transfer governor to blast centralized governor...
+Called Contract(0x4300000000000000000000000000000000000002).configureGovernorOnBehalf(_newGovernor: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228", contractAddress: "0x4dD9e7dd344a309030B22d36A567f0d99C6a5403")
+Transaction hash: 0x8aa51c40a15150f62f42e91d131540d7a388117c4c82c0ceccbb324b74fe261e
+Add contract to gas holders registry...
+Called Contract(0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228).addGasHolder(contractAddress_: "0x4dD9e7dd344a309030B22d36A567f0d99C6a5403")
+Transaction hash: 0xdc8851a4f9e7fc1575b144a9977f9e25878a141192409fc2ca6effa1dde322f5
+VeFnxDistributorUpgradeable_Proxy(0x3B23472ad7134508cb24DAB353Cfb7097D33C706) blast governor equal deployer(0x9140D359f2855E6540609dd4A93773ED1f45f509)
+Transfer governor to blast centralized governor...
+Called Contract(0x4300000000000000000000000000000000000002).configureGovernorOnBehalf(_newGovernor: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228", contractAddress: "0x3B23472ad7134508cb24DAB353Cfb7097D33C706")
+Transaction hash: 0x3f419bb266d0f7e9ae9a672baa6ec733fe368ffb9af629abb8c407fd3396692e
+Add contract to gas holders registry...
+Called Contract(0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228).addGasHolder(contractAddress_: "0x3B23472ad7134508cb24DAB353Cfb7097D33C706")
+Transaction hash: 0xc10933a51e14320e37a159ec8816e1f99500dcc18e1832f3f41264a661861ae6
+BribeFactoryUpgradeable_Proxy(0x4044d19418d30FFE4eE6900C2AD83F57225fE387) blast governor equal deployer(0x9140D359f2855E6540609dd4A93773ED1f45f509)
+Transfer governor to blast centralized governor...
+Called Contract(0x4300000000000000000000000000000000000002).configureGovernorOnBehalf(_newGovernor: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228", contractAddress: "0x4044d19418d30FFE4eE6900C2AD83F57225fE387")
+Transaction hash: 0x721596cb66ded8680a72162f06444ce3644f1f6e3120aab459d2abb55253254c
+Add contract to gas holders registry...
+Called Contract(0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228).addGasHolder(contractAddress_: "0x4044d19418d30FFE4eE6900C2AD83F57225fE387")
+Transaction hash: 0x7cdf7307102c2cc73aab8123dcd747ef4f685d9e9d3b1d60f2822060b17b4494
+Fenix(0xA12E4649fdDDEFD0FB390e4D4fb34fFbd2834fA6) blast governor equal deployer(0x9140D359f2855E6540609dd4A93773ED1f45f509)
+Transfer governor to blast centralized governor...
+Called Contract(0x4300000000000000000000000000000000000002).configureGovernorOnBehalf(_newGovernor: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228", contractAddress: "0xA12E4649fdDDEFD0FB390e4D4fb34fFbd2834fA6")
+Transaction hash: 0x117a64c0163dc1c6e2ddaa36b9d1ae0af95f91b0ff74ff3bdfc2c58393a18d6f
+Add contract to gas holders registry...
+Called Contract(0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228).addGasHolder(contractAddress_: "0xA12E4649fdDDEFD0FB390e4D4fb34fFbd2834fA6")
+Transaction hash: 0x40ffbeefdf22fe97b565abe21c9c634516ba59052db30f3355bd33391701aae9
+MerklGaugeMiddleman(0x6cA5683422A1A5A854e213120E8bd72cB2FdDf85) blast governor equal deployer(0x9140D359f2855E6540609dd4A93773ED1f45f509)
+Transfer governor to blast centralized governor...
+Called Contract(0x4300000000000000000000000000000000000002).configureGovernorOnBehalf(_newGovernor: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228", contractAddress: "0x6cA5683422A1A5A854e213120E8bd72cB2FdDf85")
+Transaction hash: 0x85f4f1779aa1deeebee6c3c8aec6660e6b57cdca073eaaf079e31e05828f0d71
+Add contract to gas holders registry...
+Called Contract(0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228).addGasHolder(contractAddress_: "0x6cA5683422A1A5A854e213120E8bd72cB2FdDf85")
+Transaction hash: 0x81438f7fbb6043892d7eab677070c0eb8fa0df3d80d9405bc5107dff94f14257
+VeBoostUpgradeable_Proxy(0x23b400098864300B3c2EB40255559c750109f24c) blast governor equal deployer(0x9140D359f2855E6540609dd4A93773ED1f45f509)
+Transfer governor to blast centralized governor...
+Called Contract(0x4300000000000000000000000000000000000002).configureGovernorOnBehalf(_newGovernor: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228", contractAddress: "0x23b400098864300B3c2EB40255559c750109f24c")
+Transaction hash: 0x64131cb879270db5cb332dae44381274a9b3a0b6cb898a17057a1f485d714e37
+Add contract to gas holders registry...
+Called Contract(0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228).addGasHolder(contractAddress_: "0x23b400098864300B3c2EB40255559c750109f24c")
+Transaction hash: 0xd2990bf1d7568339853e97c5370a5ec7e987556e037844a14678e8f1b38d524e
+RFenix(0x0CBc34cDd5d177c813068fD01D11B419D794eE96) blast governor equal deployer(0x9140D359f2855E6540609dd4A93773ED1f45f509)
+Transfer governor to blast centralized governor...
+Called Contract(0x4300000000000000000000000000000000000002).configureGovernorOnBehalf(_newGovernor: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228", contractAddress: "0x0CBc34cDd5d177c813068fD01D11B419D794eE96")
+Transaction hash: 0x5e2603ef376cbbea3297fd6f88255f2208bf406db4875b08859f7732bd44c420
+Add contract to gas holders registry...
+Called Contract(0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228).addGasHolder(contractAddress_: "0x0CBc34cDd5d177c813068fD01D11B419D794eE96")
+Transaction hash: 0x0c001681f1be109f4146fb02a1a2fbdde722d3c96d17f1c2c896ac57a834ba24
+PairFactoryUpgradeable_Proxy(0x514AeBB1526a08DB1dB97616F281fa30F7FAB6B3) blast governor equal deployer(0x9140D359f2855E6540609dd4A93773ED1f45f509)
+Transfer governor to blast centralized governor...
+Called Contract(0x4300000000000000000000000000000000000002).configureGovernorOnBehalf(_newGovernor: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228", contractAddress: "0x514AeBB1526a08DB1dB97616F281fa30F7FAB6B3")
+Transaction hash: 0x4ff59a555e18b37cb8c38ef05fefc60022a47c55cebee9ba0efea02f9ae7ab1e
+Add contract to gas holders registry...
+Called Contract(0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228).addGasHolder(contractAddress_: "0x514AeBB1526a08DB1dB97616F281fa30F7FAB6B3")
+Transaction hash: 0xc55a6dc09545daf0278c97203b43d1feb4771152d1002dc5f3e42bf9bf6c0778
+FeesVaultFactoryUpgradeable_Proxy(0xa3103248290399cc2655b68f0038ce590ce8639E) blast governor equal deployer(0x9140D359f2855E6540609dd4A93773ED1f45f509)
+Transfer governor to blast centralized governor...
+
+
+VoterUpgradeable_Proxy(0x6cCe3E45CCe11bE2CD4715442b0d1c3675C5D055) blast governor equal deployer(0x9140D359f2855E6540609dd4A93773ED1f45f509)
+	Transfer governor to blast centralized governor...
+	Called Contract(0x4300000000000000000000000000000000000002).configureGovernorOnBehalf(_newGovernor: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228", contractAddress: "0x6cCe3E45CCe11bE2CD4715442b0d1c3675C5D055")
+	Transaction hash: 0xbc7d5f80c7cf727b88e18c658c7028a0a89d1d83aa11ca22481ae7c6582f21af
+	Add contract to gas holders registry...
+	Called Contract(0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228).addGasHolder(contractAddress_: "0x6cCe3E45CCe11bE2CD4715442b0d1c3675C5D055")
+	Transaction hash: 0x0d8463c9e336b51193a78bab33f15c36d442667d8fa8446c8f62e32fcf54b82f
+GaugeFactoryUpgradeable_Proxy_1(0x1abD24d6ea95BC2ea78e5BE16608B8068F0324D8) blast governor equal deployer(0x9140D359f2855E6540609dd4A93773ED1f45f509)
+	Transfer governor to blast centralized governor...
+	Called Contract(0x4300000000000000000000000000000000000002).configureGovernorOnBehalf(_newGovernor: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228", contractAddress: "0x1abD24d6ea95BC2ea78e5BE16608B8068F0324D8")
+	Transaction hash: 0x820ccd62a8201f2de66efaa036e4fb29b1c90b6880419ca987771d52584ba853
+	Add contract to gas holders registry...
+	Called Contract(0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228).addGasHolder(contractAddress_: "0x1abD24d6ea95BC2ea78e5BE16608B8068F0324D8")
+	Transaction hash: 0x49e35c26ac0491b7404a2db916e625bdb2ec386f5c255c7d8e3198c960abd7e7
+GaugeFactoryUpgradeable_Proxy_2(0x0cC86Eb2dFB324cd7bFcAdA7F7819Ad72a059F0A) blast governor equal deployer(0x9140D359f2855E6540609dd4A93773ED1f45f509)
+	Transfer governor to blast centralized governor...
+	Called Contract(0x4300000000000000000000000000000000000002).configureGovernorOnBehalf(_newGovernor: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228", contractAddress: "0x0cC86Eb2dFB324cd7bFcAdA7F7819Ad72a059F0A")
+	Transaction hash: 0xd907bac47b2e53aae7b335f10d284e378de9b6a1ee7d92f033e5053689895553
+	Add contract to gas holders registry...
+	Called Contract(0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228).addGasHolder(contractAddress_: "0x0cC86Eb2dFB324cd7bFcAdA7F7819Ad72a059F0A")
+	Transaction hash: 0x3f43546bdf84882d225a0911f1a96e83d128e9e1956bdfbee1da552da65cb84f
+GaugeFactoryUpgradeable_Proxy_3(0xD6Fe1FCb8f8F231Ce6dBF332e697E798bEC6fa79) blast governor equal deployer(0x9140D359f2855E6540609dd4A93773ED1f45f509)
+	Transfer governor to blast centralized governor...
+	Called Contract(0x4300000000000000000000000000000000000002).configureGovernorOnBehalf(_newGovernor: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228", contractAddress: "0xD6Fe1FCb8f8F231Ce6dBF332e697E798bEC6fa79")
+	Transaction hash: 0xbfaa5d0ca2d9aeda85e3e7f8cab2ea0a59c0b55dce11f3b4c1c6b98fd0a987b1
+	Add contract to gas holders registry...
+	Called Contract(0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228).addGasHolder(contractAddress_: "0xD6Fe1FCb8f8F231Ce6dBF332e697E798bEC6fa79")
+	Transaction hash: 0xb7d5bac1303d3485539b1ea92fd54a22da897258e98b83d0391a44779098b3dd
+AlgebraFNXPriceProviderUpgradeable_Proxy(0x968106c45b72eB84A1Abc799CC4AaFf618495c76) blast governor equal deployer(0x9140D359f2855E6540609dd4A93773ED1f45f509)
+	Transfer governor to blast centralized governor...
+	Called Contract(0x4300000000000000000000000000000000000002).configureGovernorOnBehalf(_newGovernor: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228", contractAddress: "0x968106c45b72eB84A1Abc799CC4AaFf618495c76")
+	Transaction hash: 0x16ce09c8cb71d2a0007d51a1d446a168b411e845d42b3867b65cfe8f5b64ecc0
+	Add contract to gas holders registry...
+	Called Contract(0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228).addGasHolder(contractAddress_: "0x968106c45b72eB84A1Abc799CC4AaFf618495c76")
+	Transaction hash: 0x8a66cdd8e77fdb83cf69a0826791e34505ba875df099e1bc7501318a463ff240
+RouterV2(0xAC0D01f49798426d2cDff417835a3feA80B9e698) blast governor equal deployer(0x9140D359f2855E6540609dd4A93773ED1f45f509)
+	Transfer governor to blast centralized governor...
+	Called Contract(0x4300000000000000000000000000000000000002).configureGovernorOnBehalf(_newGovernor: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228", contractAddress: "0xAC0D01f49798426d2cDff417835a3feA80B9e698")
+	Transaction hash: 0xa68ade4d85b12973c7fc75d8f011cb0bb652b0c60a3565dc24a296cf7952e23f
+	Add contract to gas holders registry...
+	Called Contract(0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228).addGasHolder(contractAddress_: "0xAC0D01f49798426d2cDff417835a3feA80B9e698")
+	Transaction hash: 0x9b907576174c799430992aac291d4ca807ae008a828a9c8a93cf71659f910bc4
+CompoundVeFNXManagedNFTStrategyFactoryUpgradeable_Proxy(0xA1657A57638694bF2cF777aD534FEd66dA22131F) blast governor equal deployer(0x9140D359f2855E6540609dd4A93773ED1f45f509)
+	Transfer governor to blast centralized governor...
+	Called Contract(0x4300000000000000000000000000000000000002).configureGovernorOnBehalf(_newGovernor: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228", contractAddress: "0xA1657A57638694bF2cF777aD534FEd66dA22131F")
+	Transaction hash: 0x97112844a81d82a41960075ce49866bb21dfa52aba5e969ab68ba5ba2fe009cd
+	Add contract to gas holders registry...
+	Called Contract(0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228).addGasHolder(contractAddress_: "0xA1657A57638694bF2cF777aD534FEd66dA22131F")
+	Transaction hash: 0x50ae78567bcbb326c5e8280f8814cbf9cfc3772647fbf24bddafc746b01100ad
+ManagedNFTManagerUpgradeable_Proxy(0xE905de6ee7252b502170e9105491BFB590Be1388) blast governor equal deployer(0x9140D359f2855E6540609dd4A93773ED1f45f509)
+	Transfer governor to blast centralized governor...
+	Called Contract(0x4300000000000000000000000000000000000002).configureGovernorOnBehalf(_newGovernor: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228", contractAddress: "0xE905de6ee7252b502170e9105491BFB590Be1388")
+	Transaction hash: 0x7164d10f682e7bfb9325c02283add6b1e8e83eb4a2d5c6e0fe6405a3af7f8ecf
+	Add contract to gas holders registry...
+	Called Contract(0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228).addGasHolder(contractAddress_: "0xE905de6ee7252b502170e9105491BFB590Be1388")
+	Transaction hash: 0xb224c29b208e2e203da374ee5d86efad2758b3776d016c5cd6fe96c530b74fc6
+RouterV2PathProviderUpgradeable_Proxy(0xf49b7D01E9A5d3331b2995Fc049e9CBF29db0648) blast governor equal deployer(0x9140D359f2855E6540609dd4A93773ED1f45f509)
+	Transfer governor to blast centralized governor...
+	Called Contract(0x4300000000000000000000000000000000000002).configureGovernorOnBehalf(_newGovernor: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228", contractAddress: "0xf49b7D01E9A5d3331b2995Fc049e9CBF29db0648")
+	Transaction hash: 0x52387c7b04b87b2987ea7ffcb0375517621e5128b2fe5fcecb5df7015f72b117
+	Add contract to gas holders registry...
+	Called Contract(0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228).addGasHolder(contractAddress_: "0xf49b7D01E9A5d3331b2995Fc049e9CBF29db0648")
+	Transaction hash: 0x230be5866292c2074933b5ede5fe4f160f053ab72d3fd4f2f428f7cb49928781
+PerpetualsGaugeUpgradeable_Proxy(0xD484a5AF8F3a55468E311BdD5aEc4634F2d7E8CC) blast governor equal deployer(0x9140D359f2855E6540609dd4A93773ED1f45f509)
+	Transfer governor to blast centralized governor...
+	Called Contract(0x4300000000000000000000000000000000000002).configureGovernorOnBehalf(_newGovernor: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228", contractAddress: "0xD484a5AF8F3a55468E311BdD5aEc4634F2d7E8CC")
+	Transaction hash: 0xfa2c9f33cab1060c55c5cf83eff924545a76bd508311e51f76feb0d62202087a
+	Add contract to gas holders registry...
+	Called Contract(0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228).addGasHolder(contractAddress_: "0xD484a5AF8F3a55468E311BdD5aEc4634F2d7E8CC")
+	Transaction hash: 0xf19fd6ee7a23c3c5e28e593019b9023e59b2f12ac980edd374003c9a0fcadeaa
+PerpetualsTradersRewarderUpgradeable_Proxy(0xa7B28975d7eF0fF1D406BE36A7D5E5647Ff469ca) blast governor equal deployer(0x9140D359f2855E6540609dd4A93773ED1f45f509)
+	Transfer governor to blast centralized governor...
+	Called Contract(0x4300000000000000000000000000000000000002).configureGovernorOnBehalf(_newGovernor: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228", contractAddress: "0xa7B28975d7eF0fF1D406BE36A7D5E5647Ff469ca")
+	Transaction hash: 0xd93e09baf357f5692c578a58faa5d32137123e8d6290d51e30a5175d601d122f
+	Add contract to gas holders registry...
+	Called Contract(0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228).addGasHolder(contractAddress_: "0xa7B28975d7eF0fF1D406BE36A7D5E5647Ff469ca")
+	Transaction hash: 0xaad2433afa6bdc0c5e266290f44215462c0742c305a435f2e2b0bae73ba706a5
+VeFnxSplitMerklAidropUpgradeable_Proxy(0x4BcC88B000C02075115275d5BB1e4133Ed1BD068) blast governor equal deployer(0x9140D359f2855E6540609dd4A93773ED1f45f509)
+	Transfer governor to blast centralized governor...
+	Called Contract(0x4300000000000000000000000000000000000002).configureGovernorOnBehalf(_newGovernor: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228", contractAddress: "0x4BcC88B000C02075115275d5BB1e4133Ed1BD068")
+	Transaction hash: 0x4335f33391f3f553894c5c257db744a39baab72ba764efb0390b0e26765c0f99
+	Add contract to gas holders registry...
+	Called Contract(0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228).addGasHolder(contractAddress_: "0x4BcC88B000C02075115275d5BB1e4133Ed1BD068")
+	Transaction hash: 0xd3d1aa4c334c65065e30eb398af62469c47c71fc506ffb02afa7f9d0fb9db7f2
+BlastGovernorUpgradeable_Implementation(0xA4c6a46f64d7D403Ddd89BA20D697B774E3E328a) blast governor equal deployer(0x9140D359f2855E6540609dd4A93773ED1f45f509)
+	Transfer governor to blast centralized governor...
+	Called Contract(0x4300000000000000000000000000000000000002).configureGovernorOnBehalf(_newGovernor: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228", contractAddress: "0xA4c6a46f64d7D403Ddd89BA20D697B774E3E328a")
+	Transaction hash: 0x4dbd1fd45095a215ff6f110e78429ceb7edd2f0b077e90d291641b79f9c3dda5
+	Add contract to gas holders registry...
+	Called Contract(0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228).addGasHolder(contractAddress_: "0xA4c6a46f64d7D403Ddd89BA20D697B774E3E328a")
+	Transaction hash: 0x8cd34ab239877c48cb7b068101e71c5f2a06debc55afcfb1e28cbd5369cb882a
+BlastRebasingTokensGovernorUpgradeable_Implementation(0x7057449c5D7E2E872d29913CD7d9eeECDCb9695f) blast governor equal deployer(0x9140D359f2855E6540609dd4A93773ED1f45f509)
+	Transfer governor to blast centralized governor...
+	Called Contract(0x4300000000000000000000000000000000000002).configureGovernorOnBehalf(_newGovernor: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228", contractAddress: "0x7057449c5D7E2E872d29913CD7d9eeECDCb9695f")
+	Transaction hash: 0xb53577c910e39170f4bfaaad1ab0d3e5b104d25c930a10bdabb947f3ee9eb1b9
+	Add contract to gas holders registry...
+	Called Contract(0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228).addGasHolder(contractAddress_: "0x7057449c5D7E2E872d29913CD7d9eeECDCb9695f")
+	Transaction hash: 0x0f069a9417fc1341b36c0ffebd626d751ece007123b75bebb1788853f42cbac5
+FenixRaiseUpgradeable_Proxy(0x1e3c17b0195fE019C46b62ED293Ad8F431bf676A) blast governor equal deployer(0x9140D359f2855E6540609dd4A93773ED1f45f509)
+	Transfer governor to blast centralized governor...
+	Called Contract(0x4300000000000000000000000000000000000002).configureGovernorOnBehalf(_newGovernor: "0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228", contractAddress: "0x1e3c17b0195fE019C46b62ED293Ad8F431bf676A")
+	Transaction hash: 0xe3474fa5c619c66d309ff1f3066ad66b81dd1de95a1640c60eb3e5c24ff632c7
+	Add contract to gas holders registry...
+	Called Contract(0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228).addGasHolder(contractAddress_: "0x1e3c17b0195fE019C46b62ED293Ad8F431bf676A")
+	Transaction hash: 0xdc8e3e6c839aa0c35bafe227e3504b5475afe7b2761380fae56640531e385053
+
+
+Starting deployment of CompoundVeFNXManagedNFTStrategyUpgradeable...
+	Constructor arguments: ["0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228"]
+CompoundVeFNXManagedNFTStrategyUpgradeable deployed at 0x7c896bcd8696156388fCf610CF4B0E9005287E01
+Save to deploys.json deployed address of CompoundVeFNXManagedNFTStrategyUpgradeable_Implementation:0x7c896bcd8696156388fCf610CF4B0E9005287E01
+Verifying TransparentUpgradeableProxy at 0x7c896bcd8696156388fCf610CF4B0E9005287E01...
+Timeout for 10s before verify proccess...
+Successfully submitted source code for contract
+contracts/nest/CompoundVeFNXManagedNFTStrategyUpgradeable.sol:CompoundVeFNXManagedNFTStrategyUpgradeable at 0x7c896bcd8696156388fCf610CF4B0E9005287E01
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract CompoundVeFNXManagedNFTStrategyUpgradeable on the block explorer.
+https://sepolia.blastscan.io/address/0x7c896bcd8696156388fCf610CF4B0E9005287E01#code
+
+Starting deployment of SingelTokenVirtualRewarderUpgradeable...
+	Constructor arguments: ["0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228"]
+SingelTokenVirtualRewarderUpgradeable deployed at 0xcDEB1fFB05e783cEef7880295b831d838BBe7b91
+Save to deploys.json deployed address of SingelTokenVirtualRewarderUpgradeable_Implementation:0xcDEB1fFB05e783cEef7880295b831d838BBe7b91
+Verifying TransparentUpgradeableProxy at 0xcDEB1fFB05e783cEef7880295b831d838BBe7b91...
+Timeout for 10s before verify proccess...
+Successfully submitted source code for contract
+contracts/nest/SingelTokenVirtualRewarderUpgradeable.sol:SingelTokenVirtualRewarderUpgradeable at 0xcDEB1fFB05e783cEef7880295b831d838BBe7b91
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract SingelTokenVirtualRewarderUpgradeable on the block explorer.
+https://sepolia.blastscan.io/address/0xcDEB1fFB05e783cEef7880295b831d838BBe7b91#code
+
+Start deploy new impelmentations...
+Starting deployment of ManagedNFTManagerUpgradeable...
+	Constructor arguments: ["0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228"]
+ManagedNFTManagerUpgradeable deployed at 0x25Ad042f4f810e56e53C62228c6549e50A8CE159
+Save to deploys.json deployed address of ManagedNFTManagerUpgradeable_Implementation:0x25Ad042f4f810e56e53C62228c6549e50A8CE159
+Verifying TransparentUpgradeableProxy at 0x25Ad042f4f810e56e53C62228c6549e50A8CE159...
+Timeout for 10s before verify proccess...
+Successfully submitted source code for contract
+contracts/nest/ManagedNFTManagerUpgradeable.sol:ManagedNFTManagerUpgradeable at 0x25Ad042f4f810e56e53C62228c6549e50A8CE159
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract ManagedNFTManagerUpgradeable on the block explorer.
+https://sepolia.blastscan.io/address/0x25Ad042f4f810e56e53C62228c6549e50A8CE159#code
+
+Start deploy new impelmentations...
+Upgrading proxy at 0xE905de6ee7252b502170e9105491BFB590Be1388 to new logic at 0x25Ad042f4f810e56e53C62228c6549e50A8CE159 using ProxyAdmin at 0x9502993595815b1Fa674C5133F42C3919a696bEc...
+Calling ProxyAdmin.upgrade(proxy: 0xE905de6ee7252b502170e9105491BFB590Be1388, newLogic: 0x25Ad042f4f810e56e53C62228c6549e50A8CE159)...
+ProxyAdmin.upgrade(proxy: 0xE905de6ee7252b502170e9105491BFB590Be1388, newLogic: 0x25Ad042f4f810e56e53C62228c6549e50A8CE159) transaction hash: 0x1420ef6e1013aa5f98fd3deeb32eea680bc325d93caac9c26878030709c8ab88
+Start deploy new impelmentations...
+Starting deployment of CompoundVeFNXManagedNFTStrategyFactoryUpgradeable...
+	Constructor arguments: ["0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228"]
+CompoundVeFNXManagedNFTStrategyFactoryUpgradeable deployed at 0x721d34963213A17030C918793179aEE63A474eC6
+Save to deploys.json deployed address of CompoundVeFNXManagedNFTStrategyFactoryUpgradeable_Implementation:0x721d34963213A17030C918793179aEE63A474eC6
+Verifying TransparentUpgradeableProxy at 0x721d34963213A17030C918793179aEE63A474eC6...
+Timeout for 10s before verify proccess...
+Successfully submitted source code for contract
+contracts/nest/CompoundVeFNXManagedNFTStrategyFactoryUpgradeable.sol:CompoundVeFNXManagedNFTStrategyFactoryUpgradeable at 0x721d34963213A17030C918793179aEE63A474eC6
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract CompoundVeFNXManagedNFTStrategyFactoryUpgradeable on the block explorer.
+https://sepolia.blastscan.io/address/0x721d34963213A17030C918793179aEE63A474eC6#code
+
+Start deploy new impelmentations...
+Upgrading proxy at 0xA1657A57638694bF2cF777aD534FEd66dA22131F to new logic at 0x721d34963213A17030C918793179aEE63A474eC6 using ProxyAdmin at 0x9502993595815b1Fa674C5133F42C3919a696bEc...
+Calling ProxyAdmin.upgrade(proxy: 0xA1657A57638694bF2cF777aD534FEd66dA22131F, newLogic: 0x721d34963213A17030C918793179aEE63A474eC6)...
+ProxyAdmin.upgrade(proxy: 0xA1657A57638694bF2cF777aD534FEd66dA22131F, newLogic: 0x721d34963213A17030C918793179aEE63A474eC6) transaction hash: 0x7562c07f2a9d097f5c3a1c88034d4f625344e1782c4ea44fd800761dfbfbedb5
+Start deploy new impelmentations...
+Starting deployment of RouterV2PathProviderUpgradeable...
+	Constructor arguments: ["0x5D72e06D2A2d9b897Ea84Cd88606Ad9E40ba4228"]
+RouterV2PathProviderUpgradeable deployed at 0x8CBEad3ceA2b44669d7a1C8FCb7A2CFB62416df6
+Save to deploys.json deployed address of RouterV2PathProviderUpgradeable_Implementation:0x8CBEad3ceA2b44669d7a1C8FCb7A2CFB62416df6
+Verifying TransparentUpgradeableProxy at 0x8CBEad3ceA2b44669d7a1C8FCb7A2CFB62416df6...
+Timeout for 10s before verify proccess...
+Successfully submitted source code for contract
+contracts/nest/RouterV2PathProviderUpgradeable.sol:RouterV2PathProviderUpgradeable at 0x8CBEad3ceA2b44669d7a1C8FCb7A2CFB62416df6
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract RouterV2PathProviderUpgradeable on the block explorer.
+https://sepolia.blastscan.io/address/0x8CBEad3ceA2b44669d7a1C8FCb7A2CFB62416df6#code
+
+Start deploy new impelmentations...
+Upgrading proxy at 0xf49b7D01E9A5d3331b2995Fc049e9CBF29db0648 to new logic at 0x8CBEad3ceA2b44669d7a1C8FCb7A2CFB62416df6 using ProxyAdmin at 0x9502993595815b1Fa674C5133F42C3919a696bEc...
+Calling ProxyAdmin.upgrade(proxy: 0xf49b7D01E9A5d3331b2995Fc049e9CBF29db0648, newLogic: 0x8CBEad3ceA2b44669d7a1C8FCb7A2CFB62416df6)...
+ProxyAdmin.upgrade(proxy: 0xf49b7D01E9A5d3331b2995Fc049e9CBF29db0648, newLogic: 0x8CBEad3ceA2b44669d7a1C8FCb7A2CFB62416df6) transaction hash: 0x6d2e01d334d1802eebfe190ba4c45cf744373ca8e7d87fe3aa41a7cfc632885a
+	Called Contract(0xA1657A57638694bF2cF777aD534FEd66dA22131F).changeStrategyImplementation(strategyImplementation_: "0x34D15c19210d31d35904CF94e24197F504C5B976")
+	Transaction hash: 0xffb79f89552f038070a5e7d3598cc2a1d561278701e1479a56abf87661b8c664
+	Called Contract(0xA1657A57638694bF2cF777aD534FEd66dA22131F).changeVirtualRewarderImplementation(virtualRewarderImplementation_: "0x0B4B20da90b6B4DD6e451682A1b8B5aF30175BCc")
+	Transaction hash: 0x1d0020856c5b5883689d70a59622930d0679cd56fed95918552bbff2f70915ef
+
+ npx hardhat run .\deploy\blastSepolia\008-UpgradeNestContractsForSupportCentalizedGovernor-upgrade.ts --network blastSepolia > deploy.txt
+Warning: Address for CompoundVeFNXManagedNFTStrategyUpgradeable_Implementation is already in the list. It will be replaced.
+        Existing address: 0x34D15c19210d31d35904CF94e24197F504C5B976
+        New address: 0x7c896bcd8696156388fCf610CF4B0E9005287E01
+Warning: Address for SingelTokenVirtualRewarderUpgradeable_Implementation is already in the list. It will be replaced.
+        Existing address: 0x0B4B20da90b6B4DD6e451682A1b8B5aF30175BCc
+        New address: 0xcDEB1fFB05e783cEef7880295b831d838BBe7b91
+Warning: Address for ManagedNFTManagerUpgradeable_Implementation is already in the list. It will be replaced.
+        Existing address: 0x7759097a047e8116603f57260f42037959C12DBE
+        New address: 0x25Ad042f4f810e56e53C62228c6549e50A8CE159
+Warning: Address for CompoundVeFNXManagedNFTStrategyFactoryUpgradeable_Implementation is already in the list. It will be replaced.
+        Existing address: 0x3b54C14236EB0758888c19966ac1254B796d7577
+        New address: 0x721d34963213A17030C918793179aEE63A474eC6
+Warning: Address for RouterV2PathProviderUpgradeable_Implementation is already in the list. It will be replaced.
+        Existing address: 0xAe3cEB9cCCedE499940AD8B01ca57D08F65FeD1D
+        New address: 0x8CBEad3ceA2b44669d7a1C8FCb7A2CFB62416df6

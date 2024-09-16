@@ -1,0 +1,3 @@
+./contracts/core/VotingEscrowUpgradeableV2.sol
+./contracts/core/VoterUpgradeableV2.sol
+./contracts/core/libraries/LibVotingEscrowValidation.sol
