@@ -44,6 +44,11 @@ _Note for C4 wardens: Anything included in this `Automated Findings / Publicly K
 
 [ ⭐️ SPONSORS: add info here ]
 
+The `Fenix` protocol is a modified version of `Chronos & Thena`, introducing innovations and changes
+
+At its core, the protocol is based on the `ve(3,3)` concept, with a new set of integrations and a variable set of rules.
+
+
 ## Links
 
 - **Previous audits:** Hats Finance audit:  [Hats website](https://app.hats.finance/audit-competitions/fenix-finance-0x83dbe5aa378f3ce160ed084daf85f621289fb92f/scope), [Fenix's website](https://docs.fenixfinance.io/fenix/additional-information/security-and-audits)
@@ -197,7 +202,7 @@ npx hardhat test
 ```
 
 To run code coverage
-```bash
+```sh
 npx hardhat coverage
 ```
 
