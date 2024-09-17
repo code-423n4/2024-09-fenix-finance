@@ -41,12 +41,40 @@ _Note for C4 wardens: Anything included in this `Automated Findings / Publicly K
 - Not supporting the deployment of contracts for other networks other than Blast as they are, the need to remove Blast features
 
 # Overview
+The `Fenix` protocol is an advanced evolution of the `Chronos & Thena` protocols, introducing a series of innovations and optimizations to enhance performance, security, and user experience. At its core, the protocol is based on the `ve(3,3)` model, with a modernized set of integrations and a features that adapts to the needs of the ecosystem.
 
-[ ⭐️ SPONSORS: add info here ]
+The scope of this audit includes two key components of the ve(3,3) system within the protocol: `VotingEscrowUpgradeableV2` (veNFT) and `VoterUpgradeableV2` (Voter). These contracts are upgraded versions of the `VotingEscrowUpgradeableV1_2` and `VoterUpgradeableV1_2` contracts. The updates were introduced to reduce contract size, minimize gas costs, eliminate code duplication, fix bugs identified in previous audits, and simplify the contract structure while maintaining essential functionality.
 
-The `Fenix` protocol is a modified version of `Chronos & Thena`, introducing innovations and changes
+### veNFT
 
-At its core, the protocol is based on the `ve(3,3)` concept, with a new set of integrations and a variable set of rules.
+The `VotingEscrowUpgradeableV2` (veNFT) contract enables users to lock their FNX tokens in exchange for veFNX NFTs. These NFTs represent voting power, which can be used in the `VoterUpgradeableV2` contract for governance and reward distribution. In addition to standard token locking and voting power calculation, the `veNFT` contract includes several new features:
+- **Permanent Lock:** Users can permanently lock their veFNX tokens, ensuring that their voting power remains at the maximum level without any decay over time. Upon unlocking, the veNFT will remain locked for the maximum period of **182 days**.
+- **mVeNFT (Managed Voting NFT):** Users have the option to delegate their veFNX voting power to a specialized mVeNFT. This managed NFT automatically votes on behalf of the users, optimally distributing voting power across pools and managing reward collection without requiring the user’s active participation. 
+- **veBoost:** The feature encourages locking for a longer period and a larger amount, as this will result in additional rewards or FNX to the user's deposit
+
+**Key Functionalities:**
+- **FNX Token Locking:** Users lock their FNX tokens in exchange for veFNX, with their voting power determined by the amount and duration of the lock. The maximum locking period is **182 days**
+  - When locking, the end date is rounded to an epoch, the minimum blocking time is 1 epoch
+- **Voting Power Calculation:** The longer the FNX tokens are locked, the greater the voting power that the veNFT holds, decaying over time unless permanently locked. 
+  - Voter power decreases linearly from the moment of blocking
+  - In the case of permanent lock, the vote power is always kept at the maximum level
+  -  mVeNft always keeps the vote power at the maximum level
+
+
+### Voter
+
+The `VoterUpgradeableV2` contract is responsible for managing the voting process, gauge emissions, and reward distribution for pools. veNFT holders can vote on liquidity pools (fenix v2, fenix v3) to influence the distribution of emissions and rewards among various gauges. It also notifies other contracts that are responsible for calculating the strength of the vote and rewarding the user for his participation
+
+- **Distribution Window:** A designated time window is reserved for operation activites. During this period, regular users are restricted from voting, reset, poke actions. Which makes it possible to vote mVeNft correctly and distribute the reward among users
+  
+- **AggregateClaim:** This feature allows users to claim multiple rewards across different pools and gauges in a single transaction, significantly reducing the complexity and gas costs associated with claiming rewards individually. This enhancement improves the user experience
+
+- **Custom Gauge:** Provides the ability to create a Gauge not only for the pool but also for specific functionality(pools, contracts, etc), which allows extend the creation of gauges not only for v2/v3 pools
+
+**Key Functionalities:**
+
+- **Gauge Management:** The contract allows users to vote on gauges, determining how emissions are distributed across different pools.
+- **Reward Distribution:** Based on the voting results, emission are allocated to the corresponding pools and rewards can be claimed by veNFT holders who participated in the voting process.
 
 
 ## Links
@@ -139,8 +167,9 @@ Any file not listed in the scope table above.
 - The user gained more voting power than expected by his actions
 - Attaching veNFT to mVeNFT resulted in the complete loss of the user's veNFT
 - The user has blocked the distribution in gauge by his actions
+- The user has blocked other users in mVeNft by their actions
 - An action that should have been available only from the owner's side was called from a third-party user
-
+- Incorrect distribution of emissions between gauges
 
 
 ## Attack ideas (where to focus for bugs)
@@ -150,25 +179,21 @@ Any file not listed in the scope table above.
 - VeNFT states and allowed actions during these states
 - Detachment and attachment to the mVeNFT
 - Permanent lock/unlock
-
+- Simple user DoS of other users in certain actions
 
 ## All trusted roles in the protocol
 
-[ ⭐️ SPONSORS: please fill in the description column here ]
-
-
 | Role                                        | Description                       |
 | ---------------------------------------       | ---------------------------- |
-| Owner (VotingEscrowUpgradeableV2.sol)         |                        |
-| Owner (ProxyAdmin)                            |                        |
-| GOVERNANCE_ROLE (VoterUpgradeableV2.sol)      |                        |
-| VOTER_ADMIN_ROLE (VoterUpgradeableV2.sol)     |                        |
+| Owner (VotingEscrowUpgradeableV2.sol)         | Manages the update of critical parameters in the VotingEscrowUpgradeableV2 contract |
+| Owner (ProxyAdmin)                            | Controls the upgrade process for all protocol contracts. |
+| GOVERNANCE_ROLE (VoterUpgradeableV2.sol)      | Responsible for adding, managing, and disabling gauges for pools |
+| VOTER_ADMIN_ROLE (VoterUpgradeableV2.sol)     | Manages the configuration and setting of critical parameters within the VoterUpgradeableV2 contract |
+| DEFAULT_ADMIN_ROLE (VoterUpgradeableV2.sol)   | Oversees the management of roles within the contract |
 
 ## Describe any novel or unique curve logic or mathematical models implemented in the contracts:
 
 N/A
-
-## Running tests
 
 ## Setup
 
