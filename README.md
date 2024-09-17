@@ -82,22 +82,16 @@ Any file not listed in the scope table above.
 ## Scoping Q &amp; A
 
 ### General questions
-### Are there any ERC20's in scope?: Yes
-
-✅ SCOUTS: If the answer above 👆 is "Yes", please add the tokens below 👇 to the table. Otherwise, update the column with "None".
-
-Any (all possible ERC20s)
-FNX, WETH, USDB, BLAST
 
 
 | Question                                | Answer                       |
 | --------------------------------------- | ---------------------------- |
-| ERC20 used by the protocol              |       🖊️             |
+| ERC20 used by the protocol              |    ✅   FNX, WETH, USDB, BLAST             |
 | Test coverage                           | ✅ SCOUTS: Please populate this after running the test coverage command                          |
 | ERC721 used  by the protocol            |            None              |
 | ERC777 used by the protocol             |           None                |
 | ERC1155 used by the protocol            |              None            |
-| Chains the protocol will be deployed on | OtherBlast  |
+| Chains the protocol will be deployed on | Blast  |
 
 ### ERC20 token behaviors in scope
 
